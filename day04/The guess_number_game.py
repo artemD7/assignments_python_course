@@ -19,18 +19,18 @@ def second_game_and_more():
     gamer_check = str(input('Do you want to play again? Enter "yes" or "no". ' ))
     if gamer_check == 'yes':
         computer_guess = random.randrange(1,21)
-        counter_guess = 0
+        counter_guess = 0 # this variable records the number of guessing attempts during one game
         while True:
             user_guess = input('Please enter the number between 1 and 20: ')
             counter_guess = counter_guess+1
-            if user_guess == "x":
+            if user_guess == "x": #if user enters "x" - the user will quit the game
                 exit()
             if user_guess == "n":
                 user_press_n()
                 counter_guess = 0
                 computer_guess = random.randrange(1,21)
                 continue
-            if user_guess == "s":
+            if user_guess == "s": #if the user enters "s" - the hidden number will be shown 
                 print(f'The hidden number is {computer_guess}')
                 counter_guess = counter_guess-1
                 continue
@@ -43,7 +43,8 @@ def second_game_and_more():
             elif computer_guess < int(user_guess):
                 print('Your guess is too big')
                 continue
-        print('The number of guessing attempts:', counter_guess)
+        print('The number of guessing attempts:', counter_guess) #in the end of each game
+        # the number of guessing attempts is shown
     elif gamer_check == 'no':
         exit()
     else:
