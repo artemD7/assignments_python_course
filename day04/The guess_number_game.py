@@ -1,6 +1,7 @@
 import random
 
-#let's define the function which reacts on user entering "n"  
+#let's define the function which reacts on user entering "n" 
+# and ask "Do you want to play a new game? Enter "yes" or "no"" guestion 
 def user_press_n():
     while True:
         gamer_check_2 = str(input('Do you want to play a new game? Enter "yes" or "no". ' ))
