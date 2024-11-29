@@ -98,5 +98,8 @@ def main(game_counter):
 
 # here we do the functions call while setting global variable "game_counter" equals 0.
 # This helps at first to run the function "first_game" in the "main" function body.
+# There "game_counter" becomes equals 1, after which "second_and_more" function runs. 
+# The script contains "Do you want to play again? Enter "yes" or "no"" question ('second_game_and_more' function) 
+# and "Do you want to play a new game? Enter "yes" or "no"" guestion ("user_press_n" function). 
 game_counter = 0
 main(game_counter)
