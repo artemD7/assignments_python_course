@@ -36,6 +36,19 @@ def main_func(filenames, print_out, calc_stat):
             print_out(tot_count['A'], tot_count['C'], tot_count['G'], tot_count['T'], tot_count['Un'], sum(tot_count.values()))
     return result
 
+def one_ore_more_seq_filter(result):
+    sum_results = {}
+    if len(result) == 1:
+        sum_results = result
+        sum_results = sum_results[0]
+    else:
+        for i in range(len(result)):
+            if len(sum_results) == 0:
+                sum_results = Counter(result[i])
+            else:
+                sum_results += Counter(result[i])
+    return sum_results
+
 if __name__=="__main__":
 
     if len(sys.argv) <2:
@@ -43,7 +56,8 @@ if __name__=="__main__":
 
     filenames = sys.argv[1:]
 
-    result = main_func(filenames, print_out, calc_stat)    
-    sum_results = Counter(result[0])+Counter(result[1])
+    result = main_func(filenames, print_out, calc_stat)
+    sum_results = one_ore_more_seq_filter(result)
+        
     print('All')
     print_out(sum_results['A'], sum_results['C'], sum_results['G'], sum_results['T'], sum_results['Un'], sum(sum_results.values()))
