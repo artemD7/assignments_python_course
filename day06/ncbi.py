@@ -1,5 +1,5 @@
 import argparse
-from Bio import Entrez, SeqIO
+from Bio import Entrez
 import csv
 from datetime import datetime
 import os
