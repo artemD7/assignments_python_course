@@ -24,10 +24,11 @@ def btnOk_clicked():
     # closing the window
     window.destroy()
 
-
+# GUI cancel button function
 def btnCancel_clicked():
     window.destroy()
 
+# data search function
 def data_search_function():
     Entrez.email = "dubovetskiy.artem@gmail.com"
     handle = Entrez.esearch(db=database_chosen, term=search_term_chosen, idtype='acc', retmax=number_items_chosen)
@@ -36,6 +37,7 @@ def data_search_function():
     handle.close()
     return data_search, id_data
 
+# download and save files function
 def download_and_save_data(id_data):
     for i in range(len(id_data)):
         handle = Entrez.efetch(db=database_chosen, id=id_data[i], rettype="gb", retmode='text')
@@ -45,7 +47,8 @@ def download_and_save_data(id_data):
         print(f"Saving to file: {filename}")
         with open(filename, 'w') as fh:
             fh.write(data)
-
+            
+# save data in csv format fuction
 def save_in_csv(data_search):
     now = datetime.now()
     date_time = now.strftime("%d/%m/%Y, %H:%M:%S")
