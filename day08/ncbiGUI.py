@@ -4,7 +4,7 @@ import csv
 from datetime import datetime
 import os
 
-# GUI for taking search parameters from user
+# GUI ok button function with search and save functions applyed 
 def btnOk_clicked():
     global database_chosen, search_term_chosen, number_items_chosen
     
