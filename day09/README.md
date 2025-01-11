@@ -9,4 +9,7 @@
 
 In the terminal, run the following command:
 
-python .\sequence_search.py sequence.fasta --dublicate --GC
+python sequence_search.py sequence.fasta --dublicate --GC
+
+### The optional parameters: 
+"--dublicate" and "--GC"
